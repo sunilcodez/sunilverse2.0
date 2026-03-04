@@ -97,7 +97,7 @@ const About = () => {
               {[
                 { value: "2+", label: "Years Experience" },
                 { value: "20+", label: "Projects Done" },
-                { value: "15+", label: "Happy Clients" },
+                // { value: "15+", label: "Happy Clients" },
               ].map((stat) => (
                 <div key={stat.label}>
                   <div className="text-2xl sm:text-3xl font-bold gradient-text">

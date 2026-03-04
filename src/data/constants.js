@@ -19,12 +19,20 @@ import {
 export const personalInfo = {
   name: "Sunil Kumar",
   title: "MERN Full Stack Developer",
+  // summary: "Building Scalable & High-Performance Web Applications",
   summary:
     "Passionate Full Stack Developer with 2 years of experience building scalable, responsive, and user-friendly web applications. Specialized in the MERN stack with a strong focus on clean code, performance optimization, and delivering seamless digital experiences.",
   email: "sunilkumar@email.com",
   linkedin: "https://linkedin.com/in/sunilkumar",
   github: "https://github.com/sunilkumar",
   resumeLink: "#",
+  typingSequences: [
+    'React.js Developer', 1500,
+    'Node.js Engineer', 1500,
+    'Full Stack Builder', 1500,
+    'MongoDB Expert', 1500,
+    'API Architect', 1500,
+  ],
 };
 
 export const skills = [
@@ -140,3 +148,12 @@ export const socialLinks = [
   { name: "GitHub", icon: FaGithub, url: "https://github.com/sunilkumar" },
   { name: "LinkedIn", icon: FaLinkedin, url: "https://linkedin.com/in/sunilkumar" },
 ];
+
+export const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }
+  },
+};

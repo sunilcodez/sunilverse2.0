@@ -1,14 +1,21 @@
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { HiArrowDown } from "react-icons/hi";
-import { personalInfo } from "../data/constants";
+import { fadeInUp, personalInfo } from "../data/constants";
+import { TypeAnimation } from "react-type-animation";
+import { FaArrowRight, FaDownload } from 'react-icons/fa';
+import { HiOutlineSparkles } from 'react-icons/hi';
+// import Button from '../ui/Button';
+import Button from "../ui-components/button";
+import CircularText from "../ui-components/rotation";
+import GradientText from "../ui-components/gradient-text";
 
 const Hero = () => {
   return (
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
+    > 
       {/* Background Effects */}
       <div className="absolute inset-0 bg-hero-gradient" />
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
@@ -39,7 +46,11 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
           >
-            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+            {/* <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" /> */}
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+            </span>
             <span className="text-gray-400 text-sm font-medium">
               Available for opportunities
             </span>
@@ -47,7 +58,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Name */}
-        <motion.h1
+        {/* <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
@@ -55,7 +66,16 @@ const Hero = () => {
         >
           <span className="text-white">Hi, I'm </span>
           <span className="gradient-text text-glow">{personalInfo.name}</span>
-        </motion.h1>
+        </motion.h1> */}
+        <GradientText
+          // colors={["#5227FF","#FF9FFC","#B19EEF"]}
+          colors={["#5227FF","#FF9FFC","#06b6d4", "#8b5cf6", "#ec4899"]}
+          animationSpeed={6}
+          showBorder={false}
+          className="custom-class"
+        >
+          {personalInfo.name}
+        </GradientText>
 
         {/* Title */}
         <motion.div
@@ -74,34 +94,55 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
-          className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mb-6 leading-relaxed"
         >
           {personalInfo.summary}
         </motion.p>
 
+        <motion.div 
+          // variants={fadeInUp} 
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="mb-6"
+        >
+          <span className="text-lg md:text-xl text-white/30 font-mono">{'< '}</span>
+          <TypeAnimation
+            sequence={personalInfo.typingSequences}
+            wrapper="span"
+            speed={50}
+            repeat={Infinity}
+            className="text-lg md:text-xl font-mono gradient-text font-semibold"
+          />
+          <span className="text-lg md:text-xl text-white/30 font-mono">{' />'}</span>
+        </motion.div>
+        {/* onHover Options: slowDown, speedUp, pause, goBonkers */}
+        <div className="fixed bottom-8 right-8 z-40">
+          <CircularText
+            text="SUNIL*KUMAR*MERN*DEV*"
+            onHover="slowDown"
+            spinDuration={16}
+          />
+        </div>
+
         {/* CTA Buttons */}
-        <motion.div
+        <motion.div 
+          // variants={fadeInUp} 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <a
-            href={personalInfo.resumeLink}
-            className="group relative px-8 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-violet-500 text-white font-semibold text-sm overflow-hidden transition-all duration-300 hover:shadow-glow-cyan hover:scale-105"
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="flex flex-wrap items-center justify-center gap-4"
           >
-            <span className="relative z-10">Download Resume</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </a>
-
-          <Link
-            to="contact"
-            smooth={true}
-            duration={500}
-            className="group px-8 py-3.5 rounded-2xl text-sm font-semibold cursor-pointer transition-all duration-300 glass hover:bg-white/10 hover:scale-105 text-gray-300 hover:text-white"
-          >
-            Contact Me
-          </Link>
+          <Button variant="glow" href="#projects" icon={HiOutlineSparkles}>
+            View Projects
+          </Button>
+          <Button variant="secondary" href="/Sunil Kumar's Resume.pdf" icon={FaDownload}>
+            Download Resume
+          </Button>
+          <Button variant="secondary" href="#contact" icon={FaArrowRight}>
+            Hire Me
+          </Button>
+          
         </motion.div>
       </div>
 
