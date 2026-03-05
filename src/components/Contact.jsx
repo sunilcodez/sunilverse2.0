@@ -1,8 +1,10 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
-import { HiMail, HiLocationMarker } from "react-icons/hi";
+import { HiMail, HiLocationMarker, HiCheckCircle, HiXCircle } from "react-icons/hi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { personalInfo } from "../data/constants";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../data/firebase";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -13,16 +15,35 @@ const Contact = () => {
     message: "",
   });
   const [focused, setFocused] = useState("");
+  const [toast, setToast] = useState({ show: false, type: "", message: "" });
+
+  const showToast = (type, message) => {
+    setToast({ show: true, type, message });
+    setTimeout(() => {
+      setToast({ show: false, type: "", message: "" });
+    }, 4000);
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    alert("Thank you for your message! I'll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
+    try {
+      await addDoc(collection(db, "users"), {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        createdAt: serverTimestamp()
+      });
+
+      showToast("success", "Message sent successfully! I'll get back to you soon.");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.log(error);
+      showToast("error", "Oops! Something went wrong. Please try again.");
+    }
   };
 
   const contactInfo = [
@@ -203,6 +224,121 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Custom Toast Notification */}
+      <AnimatePresence>
+        {toast.show && (
+          // <motion.div
+          //   initial={{ opacity: 0, y: -100, scale: 0.8 }}
+          //   animate={{ opacity: 1, y: 0, scale: 1 }}
+          //   exit={{ opacity: 0, y: -100, scale: 0.8 }}
+          //   transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+          //   // className="fixed top-8 left-1/2 -translate-x-1/2 z-50 max-w-md w-full mx-4"
+          //   className="fixed top-6 left-0 right-0 flex justify-center z-50 px-4"
+          // >
+          //   <div
+          //     className={`glass rounded-2xl p-5 shadow-2xl border ${
+          //       toast.type === "success"
+          //         ? "border-cyan-500/30 bg-gradient-to-r from-cyan-500/10 to-violet-500/10"
+          //         : "border-red-500/30 bg-gradient-to-r from-red-500/10 to-orange-500/10"
+          //     }`}
+          //   >
+          //     <div className="flex items-start gap-4">
+          //       {/* Icon */}
+          //       <div
+          //         className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
+          //           toast.type === "success"
+          //             ? "bg-gradient-to-br from-cyan-500/20 to-violet-500/20"
+          //             : "bg-gradient-to-br from-red-500/20 to-orange-500/20"
+          //         }`}
+          //       >
+          //         {toast.type === "success" ? (
+          //           <HiCheckCircle className="text-2xl text-cyan-400" />
+          //         ) : (
+          //           <HiXCircle className="text-2xl text-red-400" />
+          //         )}
+          //       </div>
+
+          //       {/* Message */}
+          //       <div className="flex-1 pt-1">
+          //         <h4
+          //           className={`font-semibold mb-1 ${
+          //             toast.type === "success" ? "text-cyan-300" : "text-red-300"
+          //           }`}
+          //         >
+          //           {toast.type === "success" ? "Success!" : "Error"}
+          //         </h4>
+          //         <p className="text-gray-300 text-sm leading-relaxed">
+          //           {toast.message}
+          //         </p>
+          //       </div>
+
+          //       {/* Close Button */}
+          //       <button
+          //         onClick={() => setToast({ show: false, type: "", message: "" })}
+          //         className="text-gray-400 hover:text-white transition-colors duration-200"
+          //       >
+          //         <svg
+          //           className="w-5 h-5"
+          //           fill="none"
+          //           stroke="currentColor"
+          //           viewBox="0 0 24 24"
+          //         >
+          //           <path
+          //             strokeLinecap="round"
+          //             strokeLinejoin="round"
+          //             strokeWidth={2}
+          //             d="M6 18L18 6M6 6l12 12"
+          //           />
+          //         </svg>
+          //       </button>
+          //     </div>
+
+          //     {/* Progress Bar */}
+          //     <motion.div
+          //       initial={{ width: "100%" }}
+          //       animate={{ width: "0%" }}
+          //       transition={{ duration: 4, ease: "linear" }}
+          //       className={`h-1 rounded-full mt-4 ${
+          //         toast.type === "success"
+          //           ? "bg-gradient-to-r from-cyan-500 to-violet-500"
+          //           : "bg-gradient-to-r from-red-500 to-orange-500"
+          //       }`}
+          //     />
+          //   </div>
+          // </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: -80, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -80, scale: 0.9 }}
+            transition={{ duration: 0.35 }}
+            className="fixed top-6 left-0 right-0 flex justify-center z-50 px-4"
+          >
+            <div className="glass rounded-xl p-3 shadow-xl border max-w-xs w-full">
+              <div className="flex items-start gap-2">
+
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                  {toast.type === "success" ? (
+                    <HiCheckCircle className="text-lg text-cyan-400" />
+                  ) : (
+                    <HiXCircle className="text-lg text-red-400" />
+                  )}
+                </div>
+
+                <div className="flex-1">
+                  <h4 className="font-medium text-sm">
+                    {toast.type === "success" ? "Success!" : "Error"}
+                  </h4>
+                  <p className="text-gray-300 text-xs">
+                    {toast.message}
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

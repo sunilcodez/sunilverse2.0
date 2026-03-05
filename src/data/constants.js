@@ -7,6 +7,8 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaDatabase,
+  FaCode,
+  FaRocket,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -14,6 +16,10 @@ import {
   SiExpress,
   SiMongodb,
   SiPostman,
+  SiNestjs,
+  SiMysql,
+  SiFramer,
+  SiAntdesign,
 } from "react-icons/si";
 
 export const personalInfo = {
@@ -22,9 +28,9 @@ export const personalInfo = {
   // summary: "Building Scalable & High-Performance Web Applications",
   summary:
     "Passionate Full Stack Developer with 2 years of experience building scalable, responsive, and user-friendly web applications. Specialized in the MERN stack with a strong focus on clean code, performance optimization, and delivering seamless digital experiences.",
-  email: "sunilkumar@email.com",
+  email: "sunilkumar2001.n@gmail.com",
   linkedin: "https://linkedin.com/in/sunilkumar",
-  github: "https://github.com/sunilkumar",
+  github: "https://github.com/SUNIL20k",
   resumeLink: "#",
   typingSequences: [
     'React.js Developer', 1500,
@@ -37,34 +43,164 @@ export const personalInfo = {
 
 export const skills = [
   {
-    category: "Frontend",
+    category: "Frontend Development",
+    description: "Building responsive, performant user interfaces with modern frameworks and tools",
     items: [
-      { name: "React.js", icon: FaReact, level: 90, color: "#61DAFB" },
-      { name: "Tailwind CSS", icon: SiTailwindcss, level: 85, color: "#06B6D4" },
-      { name: "JavaScript (ES6+)", icon: SiJavascript, level: 88, color: "#F7DF1E" },
-      { name: "HTML5", icon: FaHtml5, level: 95, color: "#E34F26" },
-      { name: "CSS3", icon: FaCss3Alt, level: 90, color: "#1572B6" },
+      { 
+        name: "React.js", 
+        icon: FaReact, 
+        color: "#61DAFB",
+        points: [
+          "Component-based architecture with hooks and context API",
+          "State management and performance optimization",
+          "Integration with RESTful APIs and real-time data"
+        ]
+      },
+      { 
+        name: "Tailwind CSS", 
+        icon: SiTailwindcss, 
+        color: "#06B6D4",
+        points: [
+          "Rapid UI development with utility-first approach",
+          "Custom theme configuration and responsive design",
+          "Production-ready, optimized builds"
+        ]
+      },
+      { 
+        name: "Framer Motion", 
+        icon: SiFramer, 
+        color: "#FF0055",
+        points: [
+          "Smooth animations and page transitions",
+          "Interactive UI elements and gesture handling",
+          "Enhanced user experience with motion design"
+        ]
+      },
+      { 
+        name: "Ant Design", 
+        icon: SiAntdesign, 
+        color: "#1677FF",
+        points: [
+          "Built enterprise-level UI using pre-designed Ant Design components",
+          "Implemented complex forms with validation and dynamic form handling",
+          "Developed dashboards with charts and structured data visualization",
+          "Improved development speed using consistent and scalable UI patterns"
+        ]
+      }
     ],
   },
   {
-    category: "Backend",
+    category: "Backend Development",
+    description: "Designing scalable server-side applications and RESTful APIs",
     items: [
-      { name: "Node.js", icon: FaNodeJs, level: 85, color: "#339933" },
-      { name: "Express.js", icon: SiExpress, level: 82, color: "#ffffff" },
+      { 
+        name: "Node.js", 
+        icon: FaNodeJs, 
+        color: "#339933",
+        points: [
+          "Asynchronous programming and event-driven architecture",
+          "Building scalable server-side applications",
+          "Integration with databases and third-party services"
+        ]
+      },
+      { 
+        name: "Express.js", 
+        icon: SiExpress, 
+        color: "#ffffff",
+        points: [
+          "RESTful API development with proper routing",
+          "Middleware implementation for authentication and validation",
+          "Error handling and production-ready deployments"
+        ]
+      },
+      { 
+        name: "NestJS", 
+        icon: SiNestjs, 
+        color: "#E0234E",
+        points: [
+          "TypeScript-based enterprise application development",
+          "Modular architecture with dependency injection",
+          "Building maintainable and testable APIs"
+        ]
+      },
     ],
   },
   {
-    category: "Database",
+    category: "Database Management",
+    description: "Working with both SQL and NoSQL databases for optimal data storage",
     items: [
-      { name: "MongoDB", icon: SiMongodb, level: 80, color: "#47A248" },
+      { 
+        name: "MongoDB", 
+        icon: SiMongodb, 
+        color: "#47A248",
+        points: [
+          "Schema design and document modeling",
+          "Aggregation pipelines and indexing strategies",
+          "Performance optimization for large datasets"
+        ]
+      },
+      { 
+        name: "MySQL", 
+        icon: SiMysql, 
+        color: "#4479A1",
+        points: [
+          "Relational database design and normalization",
+          "Complex queries and stored procedures",
+          "Transaction management and data integrity"
+        ]
+      },
     ],
   },
   {
-    category: "Tools",
+    category: "Development Tools",
+    description: "Version control, API testing, and agile development workflows",
     items: [
-      { name: "Git", icon: FaGitAlt, level: 85, color: "#F05032" },
-      { name: "GitHub", icon: FaGithub, level: 88, color: "#ffffff" },
-      { name: "Postman", icon: SiPostman, level: 78, color: "#FF6C37" },
+      { 
+        name: "Git & GitHub", 
+        icon: FaGitAlt, 
+        color: "#F05032",
+        points: [
+          "Version control with branching strategies",
+          "Code collaboration and pull request workflows",
+          "CI/CD integration and deployment automation"
+        ]
+      },
+      { 
+        name: "REST APIs", 
+        icon: FaCode, 
+        color: "#00D8FF",
+        points: [
+          "API design following REST principles",
+          "Postman for testing and documentation",
+          "Integration with third-party services"
+        ]
+      },
+    ],
+  },
+  {
+    category: "Core Strengths",
+    description: "Professional skills developed through real-world project delivery",
+    items: [
+      { 
+        name: "Full-Stack Development", 
+        icon: FaRocket, 
+        color: "#9333EA",
+        points: [
+          "End-to-end feature development from UI to database",
+          "Performance optimization and code refactoring",
+          "Production bug fixes and maintenance"
+        ]
+      },
+      { 
+        name: "Agile Practices", 
+        icon: FaDatabase, 
+        color: "#06B6D4",
+        points: [
+          "Sprint planning and daily standups",
+          "Code reviews and collaborative development",
+          "Iterative development with continuous feedback"
+        ]
+      },
     ],
   },
 ];
@@ -111,10 +247,10 @@ export const projects = [
 export const experience = [
   {
     role: "MERN Full Stack Developer",
-    company: "Tech Solutions Pvt. Ltd.",
+    company: "App Brigade Technologies Pvt. Ltd.",
     duration: "2024 – Present",
     responsibilities: [
-      "Developed and maintained full-stack web applications using React.js, Node.js, Express.js, and MongoDB",
+      "Designed and developed full-stack web applications using React.js and Node.js (Express.js & NestJS), working with both MongoDB and MySQL databases",
       "Built RESTful APIs and integrated third-party services for enhanced functionality",
       "Implemented responsive and pixel-perfect UI components using Tailwind CSS",
       "Optimized application performance, reducing load times by 40%",
@@ -122,15 +258,15 @@ export const experience = [
     ],
   },
   {
-    role: "Junior Web Developer",
-    company: "Digital Innovations Inc.",
+    role: "Self-Learning MERN Stack Developer",
+    company: "Personal Projects & Continuous Learning",
     duration: "2023 – 2024",
     responsibilities: [
-      "Built dynamic and responsive web interfaces using React.js and modern CSS",
-      "Developed backend services and REST APIs using Node.js and Express.js",
-      "Managed MongoDB databases and implemented efficient data models",
-      "Integrated payment gateways and authentication systems",
-      "Participated in code reviews and maintained coding standards",
+      "Learned and built full-stack applications using MongoDB, Express.js, React.js, and Node.js",
+      "Developed multiple personal projects to strengthen frontend and backend concepts",
+      "Practiced REST API development and database design principles",
+      "Implemented authentication, authorization, and CRUD operations in projects",
+      "Continuously improved problem-solving skills and understanding of scalable application architecture",
     ],
   },
 ];
@@ -138,7 +274,7 @@ export const experience = [
 export const navLinks = [
   { name: "Home", to: "hero" },
   { name: "About", to: "about" },
-  { name: "Skills", to: "skills" },
+  { name: "Expertise", to: "expertise" },
   { name: "Projects", to: "projects" },
   { name: "Experience", to: "experience" },
   { name: "Contact", to: "contact" },

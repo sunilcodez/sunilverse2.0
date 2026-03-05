@@ -121,7 +121,8 @@ export default function GradientText({
           WebkitBackgroundClip: 'text'
         }}
       >
-        <span className="text-white">Hi, I'm </span> {children}
+        <span className="text-white">Hi, I'm </span> 
+        {children}
       </motion.div>
     </motion.div>
   );
