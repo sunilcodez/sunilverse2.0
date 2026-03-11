@@ -27,10 +27,11 @@ export const personalInfo = {
   title: "MERN Full Stack Developer",
   // summary: "Building Scalable & High-Performance Web Applications",
   summary:
-    "Passionate Full Stack Developer with 2 years of experience building scalable, responsive, and user-friendly web applications. Specialized in the MERN stack with a strong focus on clean code, performance optimization, and delivering seamless digital experiences.",
+    // "Passionate Full Stack Developer with 2 years of experience building scalable, responsive, and user-friendly web applications. Specialized in the MERN stack with a strong focus on clean code, performance optimization, and delivering seamless digital experiences.",
+    "Passionate Full Stack Developer with 2+ years of experience building scalable and user-friendly web applications using the MERN stack, focused on clean code and performance-driven solutions.",
   email: "sunilkumar2001.n@gmail.com",
   linkedin: "https://linkedin.com/in/sunilkumar",
-  github: "https://github.com/SUNIL20k",
+  github: "https://github.com/sunilcodez",
   resumeLink: "#",
   typingSequences: [
     'React.js Developer', 1500,
@@ -46,9 +47,9 @@ export const skills = [
     category: "Frontend Development",
     description: "Building responsive, performant user interfaces with modern frameworks and tools",
     items: [
-      { 
-        name: "React.js", 
-        icon: FaReact, 
+      {
+        name: "React.js",
+        icon: FaReact,
         color: "#61DAFB",
         points: [
           "Component-based architecture with hooks and context API",
@@ -56,9 +57,9 @@ export const skills = [
           "Integration with RESTful APIs and real-time data"
         ]
       },
-      { 
-        name: "Tailwind CSS", 
-        icon: SiTailwindcss, 
+      {
+        name: "Tailwind CSS",
+        icon: SiTailwindcss,
         color: "#06B6D4",
         points: [
           "Rapid UI development with utility-first approach",
@@ -66,9 +67,9 @@ export const skills = [
           "Production-ready, optimized builds"
         ]
       },
-      { 
-        name: "Framer Motion", 
-        icon: SiFramer, 
+      {
+        name: "Framer Motion",
+        icon: SiFramer,
         color: "#FF0055",
         points: [
           "Smooth animations and page transitions",
@@ -76,9 +77,9 @@ export const skills = [
           "Enhanced user experience with motion design"
         ]
       },
-      { 
-        name: "Ant Design", 
-        icon: SiAntdesign, 
+      {
+        name: "Ant Design",
+        icon: SiAntdesign,
         color: "#1677FF",
         points: [
           "Built enterprise-level UI using pre-designed Ant Design components",
@@ -93,9 +94,9 @@ export const skills = [
     category: "Backend Development",
     description: "Designing scalable server-side applications and RESTful APIs",
     items: [
-      { 
-        name: "Node.js", 
-        icon: FaNodeJs, 
+      {
+        name: "Node.js",
+        icon: FaNodeJs,
         color: "#339933",
         points: [
           "Asynchronous programming and event-driven architecture",
@@ -103,9 +104,9 @@ export const skills = [
           "Integration with databases and third-party services"
         ]
       },
-      { 
-        name: "Express.js", 
-        icon: SiExpress, 
+      {
+        name: "Express.js",
+        icon: SiExpress,
         color: "#ffffff",
         points: [
           "RESTful API development with proper routing",
@@ -113,9 +114,9 @@ export const skills = [
           "Error handling and production-ready deployments"
         ]
       },
-      { 
-        name: "NestJS", 
-        icon: SiNestjs, 
+      {
+        name: "NestJS",
+        icon: SiNestjs,
         color: "#E0234E",
         points: [
           "TypeScript-based enterprise application development",
@@ -129,9 +130,9 @@ export const skills = [
     category: "Database Management",
     description: "Working with both SQL and NoSQL databases for optimal data storage",
     items: [
-      { 
-        name: "MongoDB", 
-        icon: SiMongodb, 
+      {
+        name: "MongoDB",
+        icon: SiMongodb,
         color: "#47A248",
         points: [
           "Schema design and document modeling",
@@ -139,9 +140,9 @@ export const skills = [
           "Performance optimization for large datasets"
         ]
       },
-      { 
-        name: "MySQL", 
-        icon: SiMysql, 
+      {
+        name: "MySQL",
+        icon: SiMysql,
         color: "#4479A1",
         points: [
           "Relational database design and normalization",
@@ -155,9 +156,9 @@ export const skills = [
     category: "Development Tools",
     description: "Version control, API testing, and agile development workflows",
     items: [
-      { 
-        name: "Git & GitHub", 
-        icon: FaGitAlt, 
+      {
+        name: "Git & GitHub",
+        icon: FaGitAlt,
         color: "#F05032",
         points: [
           "Version control with branching strategies",
@@ -165,9 +166,9 @@ export const skills = [
           "CI/CD integration and deployment automation"
         ]
       },
-      { 
-        name: "REST APIs", 
-        icon: FaCode, 
+      {
+        name: "REST APIs",
+        icon: FaCode,
         color: "#00D8FF",
         points: [
           "API design following REST principles",
@@ -181,9 +182,9 @@ export const skills = [
     category: "Core Strengths",
     description: "Professional skills developed through real-world project delivery",
     items: [
-      { 
-        name: "Full-Stack Development", 
-        icon: FaRocket, 
+      {
+        name: "Full-Stack Development",
+        icon: FaRocket,
         color: "#9333EA",
         points: [
           "End-to-end feature development from UI to database",
@@ -191,9 +192,9 @@ export const skills = [
           "Production bug fixes and maintenance"
         ]
       },
-      { 
-        name: "Agile Practices", 
-        icon: FaDatabase, 
+      {
+        name: "Agile Practices",
+        icon: FaDatabase,
         color: "#06B6D4",
         points: [
           "Sprint planning and daily standups",
@@ -214,6 +215,7 @@ export const projects = [
     liveLink: "#",
     githubLink: "#",
     image: "🛒",
+    gradient: 'from-indigo-600 to-blue-600',
   },
   {
     title: "Task Management App",
@@ -222,6 +224,7 @@ export const projects = [
     tech: ["React.js", "Node.js", "MongoDB", "Socket.io", "CSS3"],
     liveLink: "#",
     githubLink: "#",
+    gradient: 'from-purple-600 to-pink-600',
     image: "📋",
   },
   {
@@ -231,6 +234,7 @@ export const projects = [
     tech: ["React.js", "Express.js", "MongoDB", "Chart.js", "Tailwind CSS"],
     liveLink: "#",
     githubLink: "#",
+    gradient: 'from-cyan-600 to-teal-600',
     image: "📊",
   },
   {
@@ -240,6 +244,7 @@ export const projects = [
     tech: ["React.js", "Node.js", "Socket.io", "MongoDB", "Express.js"],
     liveLink: "#",
     githubLink: "#",
+    gradient: 'from-amber-600 to-orange-600',
     image: "💬",
   },
 ];

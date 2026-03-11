@@ -43,14 +43,14 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? 'py-3'
-          : 'py-5'
+        ? 'py-3'
+        : 'py-5'
         }`}
     >
       <div className="max-w-7xl mx-auto">
         <div className={`flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-500 ${scrolled
-            ? 'glass-strong shadow-lg shadow-purple-500/5'
-            : 'bg-transparent'
+          ? 'glass-strong shadow-lg shadow-purple-500/5'
+          : 'bg-transparent'
           }`}>
           {/* Logo */}
           <a
@@ -72,8 +72,8 @@ const Navbar = () => {
                   href={`#${link.to}`}
                   onClick={(e) => handleNavClick(e, link.to)}
                   className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${isActive
-                      ? 'text-white'
-                      : 'text-white/50 hover:text-white/80'
+                    ? 'text-white'
+                    : 'text-white/50 hover:text-white/80'
                     }`}
                 >
                   {isActive && (
@@ -113,11 +113,12 @@ const Navbar = () => {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20, height: 0 }}
-            animate={{ opacity: 1, y: 0, height: 'auto' }}
-            exit={{ opacity: 0, y: -20, height: 0 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden mt-2 mx-4"
+            className="md:hidden mt-2 mx-4 overflow-visible"
+            style={{ pointerEvents: 'auto' }}
           >
             <div className="glass-strong rounded-2xl p-4 space-y-1">
               {navLinks.map((link) => (
@@ -126,8 +127,8 @@ const Navbar = () => {
                   href={`#${link.to}`}
                   onClick={(e) => handleNavClick(e, link.to)}
                   className={`block px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300 ${activeSection === link.to
-                      ? 'text-white bg-white/[0.06]'
-                      : 'text-white/50 hover:text-white hover:bg-white/[0.03]'
+                    ? 'text-white bg-white/[0.06]'
+                    : 'text-white/50 hover:text-white hover:bg-white/[0.03]'
                     }`}
                 >
                   {link.name}

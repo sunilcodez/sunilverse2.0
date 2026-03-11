@@ -117,13 +117,13 @@ const Hero = () => {
           <span className="text-lg md:text-xl text-white/30 font-mono">{' />'}</span>
         </motion.div>
         {/* onHover Options: slowDown, speedUp, pause, goBonkers */}
-        <div className="fixed bottom-8 right-8 z-40">
+        {/* <div className="fixed bottom-8 right-8 z-40 hidden sm:block">
           <CircularText
             text="SUNIL*KUMAR*MERN*DEV*"
             onHover="slowDown"
             spinDuration={16}
           />
-        </div>
+        </div> */}
 
         {/* CTA Buttons */}
         <motion.div 

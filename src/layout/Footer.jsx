@@ -59,7 +59,9 @@ const Footer = () => {
             </p>
             <p className="text-gray-600 text-xs mt-2 flex items-center justify-center gap-1">
               Built with <FaHeart className="text-red-500 text-[10px]" /> using
-              React & Tailwind CSS
+              <span className="text-indigo-400">React</span>
+              <span className="text-pink-400">&</span>
+              <span className="text-cyan-400">Tailwind CSS</span>
             </p>
           </div>
         </div>

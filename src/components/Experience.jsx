@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { HiBriefcase, HiCalendar } from "react-icons/hi";
 import { experience } from "../data/constants";
+import SectionHeading from "../ui-components/section-header";
 
 const Experience = () => {
   const ref = useRef(null);
@@ -20,13 +21,20 @@ const Experience = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+
+          <SectionHeading
+            title1="Work"
+            title2="Experience"
+          // description={"My professional journey and key accomplishments"}
+          />
+
+          {/* <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Work <span className="gradient-text">Experience</span>
           </h2>
           <p className="text-gray-400 max-w-lg mx-auto">
             My professional journey and key accomplishments
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-violet-500 mx-auto rounded-full mt-4" />
+          <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-violet-500 mx-auto rounded-full mt-4" /> */}
         </motion.div>
 
         {/* Timeline */}

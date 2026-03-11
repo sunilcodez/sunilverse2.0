@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { personalInfo } from "../data/constants";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../data/firebase";
+import SectionHeading from "../ui-components/section-header";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -80,13 +81,19 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <SectionHeading
+            title1="Get In"
+            title2="Touch"
+          // description={"Have a project in mind or want to collaborate? Feel free to reach out!"}
+          />
+
+          {/* <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <p className="text-gray-400 max-w-lg mx-auto">
             Have a project in mind or want to collaborate? Feel free to reach out!
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-violet-500 mx-auto rounded-full mt-4" />
+          <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-violet-500 mx-auto rounded-full mt-4" /> */}
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-10">
@@ -150,8 +157,8 @@ const Contact = () => {
               <div className="relative">
                 <label
                   className={`absolute left-4 transition-all duration-300 pointer-events-none ${focused === "name" || formData.name
-                      ? "top-2 text-xs text-cyan-400"
-                      : "top-4 text-sm text-gray-500"
+                    ? "top-2 text-xs text-cyan-400"
+                    : "top-4 text-sm text-gray-500"
                     }`}
                 >
                   Your Name
@@ -172,8 +179,8 @@ const Contact = () => {
               <div className="relative">
                 <label
                   className={`absolute left-4 transition-all duration-300 pointer-events-none ${focused === "email" || formData.email
-                      ? "top-2 text-xs text-cyan-400"
-                      : "top-4 text-sm text-gray-500"
+                    ? "top-2 text-xs text-cyan-400"
+                    : "top-4 text-sm text-gray-500"
                     }`}
                 >
                   Your Email
@@ -194,8 +201,8 @@ const Contact = () => {
               <div className="relative">
                 <label
                   className={`absolute left-4 transition-all duration-300 pointer-events-none ${focused === "message" || formData.message
-                      ? "top-2 text-xs text-cyan-400"
-                      : "top-4 text-sm text-gray-500"
+                    ? "top-2 text-xs text-cyan-400"
+                    : "top-4 text-sm text-gray-500"
                     }`}
                 >
                   Your Message

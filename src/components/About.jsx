@@ -2,24 +2,25 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { HiCode, HiServer, HiDatabase, HiLightningBolt } from "react-icons/hi";
+import SectionHeading from "../ui-components/section-header";
 
 const highlights = [
   {
     icon: HiCode,
     title: "Frontend",
-    desc: "React.js, Tailwind CSS",
+    desc: "React.js, Next.js & Tailwind CSS",
     color: "from-cyan-400 to-cyan-600",
   },
   {
     icon: HiServer,
     title: "Backend",
-    desc: "Node.js, Express.js",
+    desc: "Node.js, Nest.js & Express.js",
     color: "from-violet-400 to-violet-600",
   },
   {
     icon: HiDatabase,
     title: "Database",
-    desc: "MongoDB",
+    desc: "MongoDB & MySQL",
     color: "from-emerald-400 to-emerald-600",
   },
   {
@@ -47,10 +48,12 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          {/* <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             About <span className="gradient-text">Me</span>
-          </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-violet-500 mx-auto rounded-full" />
+          </h2> */}
+
+          <SectionHeading title1="About" title2="Me" />
+          {/* <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-violet-500 mx-auto rounded-full" /> */}
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -96,8 +99,8 @@ const About = () => {
             <div className="flex gap-8 mt-8">
               {[
                 { value: "2+", label: "Years Experience" },
-                { value: "20+", label: "Projects Done" },
-                // { value: "15+", label: "Happy Clients" },
+                { value: "4+", label: "Projects Done" },
+                { value: "10+", label: "TECHNOLOGIES" },
               ].map((stat) => (
                 <div key={stat.label}>
                   <div className="text-2xl sm:text-3xl font-bold gradient-text">

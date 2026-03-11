@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { skills } from "../data/constants";
+import SectionHeading from "../ui-components/section-header";
 
 const Skills = () => {
   const ref = useRef(null);
@@ -8,6 +9,7 @@ const Skills = () => {
 
   return (
     <section id="expertise" className="relative py-24 sm:py-32">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-800/50 to-transparent" />
       <div className="absolute top-1/3 -right-40 w-80 h-80 bg-violet-500/5 rounded-full blur-3xl" />
@@ -21,13 +23,19 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <SectionHeading
+            title1="Technical"
+            title2="Expertise"
+          // description={"2 years of hands-on experience building production-ready web applications with modern technologies"}
+          />
+          {/* <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Technical <span className="gradient-text">Expertise</span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          </h2> */}
+
+          {/* <p className="text-gray-400 max-w-2xl mx-auto">
             2 years of hands-on experience building production-ready web applications with modern technologies
-          </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-violet-500 mx-auto rounded-full mt-4" />
+          </p> */}
+          {/* <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-violet-500 mx-auto rounded-full mt-4" /> */}
         </motion.div>
 
         {/* Skill Categories */}
@@ -90,7 +98,7 @@ const Skills = () => {
                           }}
                           className="flex items-start gap-3 text-gray-400 text-sm"
                         >
-                          <span 
+                          <span
                             className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
                             style={{ backgroundColor: skill.color }}
                           />
